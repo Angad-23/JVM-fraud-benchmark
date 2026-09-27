@@ -1,0 +1,66 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260927165428
+Username: LAPTOP-6S57KC0H\Angad
+RunAs User: LAPTOP-6S57KC0H\Angad
+Configuration Name: 
+Machine: LAPTOP-6S57KC0H (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File C:\Users\Angad\OneDrive\Desktop\Personal-Work\Mtech\jvm-fraud-benchmark\scripts\run_all.ps1
+Process ID: 23844
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+=== machine warm-up (discarded) ===
+py_sklearn_njobs1: n=200 median=3421.2us p95=4829.7us p99=8814.7us mean=3681.7us
+py_sklearn_njobsall: n=200 median=27570.0us p95=33610.2us p99=37633.7us mean=24837.0us
+py_onnxruntime: n=200 median=25.2us p95=38.8us p99=79.5us mean=30.3us
+
+=== Python in-process arms ===
+py_sklearn_njobsall: n=5000 median=21515.2us p95=38129.0us p99=72546.1us mean=24902.7us
+py_onnxruntime: n=5000 median=22.8us p95=36.5us p99=59.3us mean=26.1us
+
+=== JVM in-process arms ===
+jvm_smile_inprocess: n=5000 median=13.8us p95=28.2us p99=37.5us max=159.7us
+scores: min=0.172730 max=0.817917 first3=0.249155, 0.457677, 0.280509
+score_sum_measured=1730.4598526815153  (sum of scores over the measured rows only; use for cross-arm parity)
+jvm_onnx_inprocess: n=5000 median=29.7us p95=46.1us p99=59.3us max=752.9us
+scores: min=0.041412 max=0.926520 first3=0.086412, 0.319551, 0.119588
+score_sum_measured=1278.5747551359236  (sum of scores over the measured rows only; use for cross-arm parity)
+
+=== starting server: --server flask-dev --backend sklearn --n-jobs -1 ===
+PS>TerminatingError(Invoke-WebRequest): "The operation has timed out."
+server is up
+rest_flaskdev_njobsall_nokeepalive: n=200 median=40808.9us p95=66888.3us p99=76073.6us mean=42234.0us
+rest_flaskdev_njobsall_nokeepalive: n=5000 median=48423.4us p95=67962.9us p99=76379.3us mean=45705.3us
+
+=== starting server: --server waitress --backend sklearn --n-jobs 1 ===
+PS>TerminatingError(Invoke-WebRequest): "The operation has timed out."
+server is up
+rest_waitress_sklearn_keepalive: n=200 median=4366.8us p95=6331.5us p99=8270.6us mean=4629.1us
+rest_waitress_sklearn_keepalive: n=5000 median=4583.2us p95=7774.2us p99=9779.5us mean=4995.9us
+rest_waitress_sklearn_nokeepalive: n=5000 median=5075.6us p95=15245.8us p99=33373.1us mean=6705.4us
+jvm_rest_waitress_sklearn: n=5000 median=4617.3us p95=9295.1us p99=12507.5us max=48853.9us
+scores: min=0.041412 max=0.926520 first3=0.086412, 0.319551, 0.119588
+score_sum_measured=1278.5747428859843  (sum of scores over the measured rows only; use for cross-arm parity)
+
+=== starting server: --server waitress --backend onnx ===
+PS>TerminatingError(Invoke-WebRequest): "The operation has timed out."
+server is up
+rest_waitress_onnx_keepalive: n=200 median=913.2us p95=1323.3us p99=1628.8us mean=999.9us
+rest_waitress_onnx_keepalive: n=5000 median=943.0us p95=1478.7us p99=2271.1us mean=1073.2us
+jvm_rest_waitress_onnx: n=5000 median=758.0us p95=2451.5us p99=3421.8us max=22071.3us
+scores: min=0.041412 max=0.926520 first3=0.086412, 0.319551, 0.119588
+score_sum_measured=1278.5747551359236  (sum of scores over the measured rows only; use for cross-arm parity)
+
+raw results archived to C:\Users\Angad\OneDrive\Desktop\Personal-Work\Mtech\jvm-fraud-benchmark\results\runs\20260927_165428
+**********************
+Windows PowerShell transcript end
+End time: 20260927170730
+**********************

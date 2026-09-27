@@ -1,0 +1,30 @@
+# Single source of truth for the whole experiment. Change here, not in code.
+data:
+  baf_csv: ../data/raw/Base.csv          # download from Kaggle (see data/README.md)
+  label: fraud_bool
+  time_col: month
+  # Temporal split by month. Run 01_inspect_data.py first and confirm the month range.
+  train_months: [0, 1, 2, 3, 4]
+  val_months:   [5]        # used ONLY for threshold selection
+  test_months:  [6, 7]     # untouched until final evaluation
+  processed_dir: ../data/processed
+
+model:
+  n_estimators: 100
+  max_depth: 20
+  max_leaf_nodes: 500
+  min_samples_leaf: 5
+  max_features: sqrt
+  fraud_class_weight: 90       # ~ inverse prevalence (988,971 / 11,029 = 89.7)
+  random_state: 42
+
+benchmark:
+  warmup_requests: 500
+  measured_requests: 5000
+  batch_size: 1
+  seed: 42
+  service_host: 127.0.0.1      # use the IP, not "localhost" (avoids IPv6 fallback delay on Windows)
+  service_port: 5000
+
+paths:
+  results_dir: ../results

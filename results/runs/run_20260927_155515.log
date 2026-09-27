@@ -1,0 +1,25 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260927155515
+Username: LAPTOP-6S57KC0H\Angad
+RunAs User: LAPTOP-6S57KC0H\Angad
+Configuration Name: 
+Machine: LAPTOP-6S57KC0H (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File C:\Users\Angad\OneDrive\Desktop\Personal-Work\Mtech\jvm-fraud-benchmark\scripts\run_all.ps1
+Process ID: 32536
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+=== machine warm-up (discarded) ===
+py_sklearn_njobs1: n=200 median=5334.4us p95=9323.8us p99=10690.4us mean=5784.1us
+py_sklearn_njobsall: n=200 median=15857.8us p95=31261.8us p99=37363.9us mean=17832.2us
+py_onnxruntime: n=200 median=19.6us p95=23.6us p99=30.9us mean=19.9us
+
+=== Python in-process arms ===
