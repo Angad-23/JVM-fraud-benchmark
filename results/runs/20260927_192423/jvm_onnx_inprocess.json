@@ -1,0 +1,13 @@
+{
+  "label": "jvm_onnx_inprocess",
+  "arm": "onnx",
+  "n": 5000,
+  "warmup": 20000,
+  "batch_size": 1,
+  "client": "java",
+  "java": "21.0.12.1",
+  "jvm": "OpenJDK 64-Bit Server VM",
+  "os": "Windows 11 10.0",
+  "cpu_count_logical": 12,
+  "max_heap_mb": 4096
+}
