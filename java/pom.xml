@@ -11,8 +11,7 @@
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- Pin versions and REPORT them in the paper. If you change the Smile version,
-         only SmileModel.java / SmileArm.java / TrainSmile.java may need edits. -->
+
     <smile.version>3.1.1</smile.version>
     <onnxruntime.version>1.17.1</onnxruntime.version>
   </properties>
